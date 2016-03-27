@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>KeyStroke</title>
+<script type="text/javascript">
+var s=new Array(7);
+var first= new Array(7),last= new Array(7);
+var diff = new Array(7);
+var i=new Array(7),d;
+for (var k = 0; k < 7; k++) {
+  diff[k] = new Array(100);
+	s[k]=new Array(100);
+	i[k]=0;
+}
+
+
+	function keypress (d,no) 
+	{
+		var x=document.getElementById(d);
+		var t=document.getElementById("demo");
+		var evt = event || e; // for trans-browser compatibility
+    		var charCode = evt.which || evt.keyCode;
+		d=new Date();
+		s[no][i[no]]=d.getTime();
+		if(charCode!=9)
+		{
+			if(i[no]==0)
+			{
+				first[no]=last[no]=s[no][i[no]];
+				i[no]++;
+			}
+			else
+			{
+				diff[no][i[no]]=s[no][i[no]]-s[no][i[no]-1];
+				x.innerHTML+=" "+diff[no][i[no]];
+				i[no]++;
+			}
+		t.innerHTML+=" "+i[no];
+		}		
+
+		
+	}
+</script>
+</head>
+<body>
+<form>
+	Enter a string 1:
+	<input type="text" onkeyup="javascript:keypress('date1',1)"><p id="date1">0</p><br>
+Enter a string 2:
+	<input type="text" onkeyup="javascript:keypress('date2',2)"><p id="date2">0</p><br>
+Enter a string 3:
+	<input type="text" onkeyup="javascript:keypress('date3',3)"><p id="date3">0</p><br>
+Enter a string 4:
+	<input type="text" onkeyup="javascript:keypress('date4',4)"><p id="date4">0</p><br>
+Enter a string 5:
+	<input type="text" onkeyup="javascript:keypress('date5',5)"><p id="date5">0</p><br>
+Enter a string 6:
+	<input type="text" onkeyup="javascript:keypress('date6',6)"><p id="date6">0</p><br>
+
+	<button type="submit">Submit</button>
+</form>
+<p id="demo"><p>
+</body>
+</html>

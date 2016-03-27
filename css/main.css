@@ -1,0 +1,296 @@
+
+@import url(https://fonts.googleapis.com/css?family=Comfortaa:400,300,700);
+
+*{
+	font-family:"Comfortaa";
+}
+
+
+
+
+
+
+p,li{
+	font-family:"Comfortaa";
+	font-size: 12pt;
+}
+/*		Header 		*/
+
+hr{
+	height:2px;
+	 background-color: #333;
+    border: 0 none;
+    color: #eee;
+  
+}
+header{
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 120px;
+	z-index: 99;
+	background-color: #2a2a2a;
+
+	/*background-image: -moz-linear-gradient(bottom, #47ad76 0%, #47ad76 0.27%, #40c27d 99.46%, #40c27d 100%);
+	background-image: -o-linear-gradient(bottom, #47ad76 0%, #47ad76 0.27%, #40c27d 99.46%, #40c27d 100%);
+	background-image: -webkit-linear-gradient(bottom, #47ad76 0%, #47ad76 0.27%, #40c27d 99.46%, #40c27d 100%);
+	background-image: linear-gradient(bottom, #47ad76 0%, #47ad76 0.27%, #40c27d 99.46%, #40c27d 100%);*/
+}
+
+header .logo{
+	display: table-cell;
+	margin: 8px 0px 0 0;
+}
+
+header .burger_icon{
+	display: none;
+	float: right;
+	background: #ffffff;
+	padding: 5px 10px;
+	text-transform: uppercase;
+
+	color: #43b779;
+	font-family: "open_regular", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+
+	margin: 45px 10px 0 0;
+}
+
+header .burger_icon:hover{
+	cursor: pointer;
+}
+
+header .burger_icon.active{
+	background: #2a2a2a;
+	color: #ffffff;
+}
+
+header nav{
+	margin-top: 50px;
+	display: table-cell;
+}
+
+header nav li{
+	float: left;
+	margin-left: 40px;
+
+}
+
+header nav a{
+	float: left;
+	margin-left: 10px;
+}
+header nav li:first-child{
+	margin: 0;
+}
+
+header nav li a,header nav a{
+	color: #fff;
+	font-family: "open_regular", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+
+	transition: all .2s linear;
+	-o-transition: all .2s linear;
+	-moz-transition: all .2s linear;
+	-webkit-transition: all .2s linear;
+}
+
+header nav li a:hover,
+header nav li a:focus,header nav a:hover,header nav a:focus{
+	text-decoration: none;
+	color: #B7EFD1!important;
+}
+
+
+/*search */
+
+
+input[type=text] {
+    width: 230px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 100%;
+}
+
+
+
+
+/*---start-copy-right-----*/
+.copy-right{
+	text-align:center;
+	padding:1em;
+	background:#000;
+}
+.copy-right p{
+	font-size: 14px;
+	color:rgba(148, 145, 145, 0.84);
+	text-transform: capitalize;
+}
+.copy-right p a{
+	color:#fff;
+	transition: 0.5s ease;
+	-o-transition: 0.5s ease;
+	-webkit-transition: 0.5s ease;
+}
+.copy-right p a:hover{
+	color:#FFF;
+	text-decoration:underline;
+}
+/*--- //footer ----*/
+
+
+
+
+
+
+/*contact*/ 
+
+
+.contact li:hover{
+	color:lightgrey;
+	margin-left: 8px;
+	transition:0.4s;
+}
+.contact ul li a{
+	color:#e8e51c;
+}
+.contact ul li a:hover{
+	color:lightgrey;
+	margin-left: 8px;
+	transition:0.4s;
+}
+
+/*contact over*/
+
+
+
+@media (max-width: 767px) {
+
+
+	/*		Header 		*/
+	header .logo{
+		margin-right: 0;
+	}
+
+	header .burger_icon{
+		display: block;
+	}
+
+	header nav{
+		width: 100%;
+		float: none;
+		background: #2a2a2a;
+		position: absolute;
+		margin-top: 130px;
+		left: 0;
+		display: none;
+	}
+
+	header nav.show{
+		display: block;
+	}
+
+
+	header nav li,header nav a{
+		display: block;
+		width: 100%;
+		margin: 0;
+		text-align: center;
+	}
+
+	header nav li a,,header nav a{
+		display: block;
+		width: 100%;	
+		padding: 20px 0;
+		border-bottom: 1px solid #2a2a2a;
+	}
+
+	header nav li:first-child a{
+		border-top: 1px solid #2a2a2a;
+	}
+
+
+
+/*-- gallery --*/
+.gallery{
+	background-color: #333;
+}
+.gallery-grids{
+	margin:2em 0 0;
+}
+.gallery-grid1 img{
+	padding:.5em;
+	border:1px dotted #f26f62;
+}
+.da-thumbs {
+	list-style: none;
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+.da-thumbs li {
+  float: left;
+  margin: 0.4%;
+   padding: 8px;
+  position: relative;
+   width: 32.4%;
+}
+.da-thumbs li a,
+.da-thumbs li a img {
+  display: block;
+  position: relative;
+  height: 300px;
+
+  width: 100%;
+}
+.da-thumbs li a {
+	overflow: hidden;
+}
+.da-thumbs li a div {
+  position: absolute;
+  background:rgba(49, 66, 70, 0.65);
+  width: 100%;
+  height: 100%;
+}
+.da-thumbs li a div span {
+  display: block;
+  padding: 10px 0;
+  margin: 11px 20px 20px 20px;
+  font-weight: normal;
+  text-transform: capitalize;
+  color: rgba(255,255,255,0.9);
+  text-align: center;
+  font-size: 1.1em;
+}
+.da-thumbs li a div  h5 {
+  color: #FFF;
+  font-size: 1.5em;
+  margin: 3.5em 0 0 0;
+  text-align: center;
+  text-transform: capitalize;
+}
+/*-- //gallery --*/
+
+
+
+
+
+
+
+
