@@ -7,7 +7,7 @@ $list = array
 
 $myfile = fopen("data.txt","r");
 $str=fread($myfile,filesize("data.txt"));
-$str="username,"."password".$str;
+$str="username,".$str;
 	print_r ($str);
 $arr=explode(".",$str);
 print_r ($arr);

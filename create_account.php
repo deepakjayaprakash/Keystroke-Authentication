@@ -28,6 +28,18 @@
 <script src="js/jquery.min.js"></script>
 </head>
 
+
+    <?php
+    session_start(); //starts the session
+    if($_SESSION['user']){ //checks if user is logged in
+    }
+    else{
+        header("location:index.php"); // redirects if user is not logged in
+    }
+    $user = $_SESSION['user']; //assigns user value
+    ?>
+
+
 <script type="text/javascript">
 var s=new Array(7);
 var first= new Array(7),last= new Array(7);
@@ -107,7 +119,7 @@ for (var k = 0; k < 7; k++) {
     </header>
 <body>
 
-
+<h2>Hello <?php Print "$user"?>!</h2> 
 <div class="container" align="center">
   <div class="reg" >
     <h2 >Registration Page</h2>
@@ -129,6 +141,7 @@ Enter a string 5:<br>
   <input type="text" onkeyup="javascript:keypress('date5',5)" name="id5"><p id="date5">0</p><br>
 Enter a string 6:<br>
   <input type="text" onkeyup="javascript:keypress('date6',6)" name="id6"><p id="date6">0</p><br>
+
   <button type="submit">Submit</button>
       </div>
     </div>
