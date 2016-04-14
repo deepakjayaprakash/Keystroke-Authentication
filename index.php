@@ -77,10 +77,11 @@
 					<a href="index.php" style=" font-size:15pt;color: #e8e51c;">Github
 					</a></li>
 					<li class="animated wow fadeInRight" data-wow-delay=".4s">
-					<a href="create_account.php" style=" font-size:15pt;color: #e8e51c;">Register
+					<a href="register.php" style=" font-size:15pt;color: #e8e51c;">Register
 					</a></li>
 
 			
+
 
 	<!--  Modal Section  -->			
 <a href="" data-toggle="modal" data-target=".bannerformmodal" style=" font-size:15pt;color: #e8e51c;" >Login</a>
@@ -97,14 +98,14 @@
                       </div>
 
              <div class="modal-body" style="padding:40px 50px;">
-          <form role="form">
-            <div class="form-group">
-              <label for="usrname">Username</label>
-              <input type="text" class="form-control" id="usrname" placeholder="Enter email" align="center">
+          <form role="form" action="checklogin.php" method="POST">
+            <div class="form-group">	
+              <label for="username">Username</label>
+              <input type="text" class="form-control" name="username" placeholder="Enter email" align="center">
             </div>
             <div class="form-group">
-              <label for="psw"> Password</label>
-              <input type="text" class="form-control" id="psw" placeholder="Enter password">
+              <label for="password"> Password</label>
+              <input type="text" class="form-control" name="password" placeholder="Enter password">
             </div>
           
               <button type="submit" class="btn btn-success btn-block"></span> Login</button>
@@ -115,13 +116,16 @@
            <div class="modal-footer">
           <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
           Cancel</button>
-          <p><a href="#">Not a member?  Sign Up</a></p><br>
+          <p><a href="register.php">Not a member?  Sign Up</a></p><br>
 
         </div>        
         </div>
         </div>
       </div>
     </div>
+
+
+
 				</ul>
 			</nav>
 

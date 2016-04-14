@@ -1,12 +1,3 @@
-<?php
-/**
- * This page serves to create an account for a user and train the system
- * to recognize that user's typing patterns.
- *
- * Note that we display a very different page depending on the contents of the $_POST array.
- */
-
-?>
 
 <!DOCTYPE HTML>
 <html>
@@ -117,25 +108,30 @@ for (var k = 0; k < 7; k++) {
 <body>
 
 
+<div class="container" align="center">
+  <div class="reg" >
+    <h2 >Registration Page</h2>
+
 <p><b>Start typing a name in the input field below:</b></p>
 <form action="validate.php" method="post"> 
 
-Enter a string 1:
+Enter a string 1:<br>
   <input type="text" onkeyup="javascript:keypress('date1',1)" name="id1"><p id="date1">0</p><br>
 
-Enter a string 2:
+Enter a string 2:<br>
   <input type="text" onkeyup="javascript:keypress('date2',2)"name="id2"><p id="date2">0</p><br>
 
-Enter a string 3:
+Enter a string 3:<br>
   <input type="text" onkeyup="javascript:keypress('date3',3)" name="id3"><p id="date3">0</p><br>
-Enter a string 4:
+Enter a string 4:<br>
   <input type="text" onkeyup="javascript:keypress('date4',4)" name="id4"><p id="date4">0</p><br>
-Enter a string 5:
+Enter a string 5:<br>
   <input type="text" onkeyup="javascript:keypress('date5',5)" name="id5"><p id="date5">0</p><br>
-Enter a string 6:
+Enter a string 6:<br>
   <input type="text" onkeyup="javascript:keypress('date6',6)" name="id6"><p id="date6">0</p><br>
   <button type="submit">Submit</button>
-  
+      </div>
+    </div>
 
 </form>
 
