@@ -10,16 +10,6 @@
     $user = $_SESSION['user']; //assigns user value
 
 
-	mysql_connect("localhost", "root","root") or die(mysql_error()); //Connect to server
-	mysql_select_db("keystroke") or die("Cannot connect to database"); //Connect to database
-	$query = mysql_query("SELECT * from users WHERE username='$user'"); //Query the users table if there are matching rows equal to $username
-	while($row = mysql_fetch_assoc($query)) //display all rows from query
-		{
-			
-			$table_password = $row['password']; // the first password row is passed on to $table_users, and so on until the query is finished
-		}
-
-
 $id1=$_POST['id1'];
 $id2=$_POST['id2'];
 $id3=$_POST['id3'];
@@ -28,16 +18,25 @@ $id5=$_POST['id5'];
 $id6=$_POST['id6'];
 $time_data = array();
 
-if($id1==$id2&&$id3==$id4&&$id5==$id6&&$id1==$id3&&$id1==$id5&&$id1!=""&&$table_password==$id1){
+if($id1==$id2&&$id3==$id4&&$id5==$id6&&$id1==$id3&&$id1==$id5&&$id1!=""){
 
+/*
+$myfile = fopen("data.txt", "a+") or die("Unable to open file!");
+$str= fread($myfile,filesize("data.txt"));
+echo $str;
+fclose($myfile);
 
+	$time_data=explode(',',$str);
+	print_r($time_data);
+
+*/
 
 
 $myfile = fopen("data.txt","r");
 $str=fread($myfile,filesize("data.txt"));
 $str=$user.",".$str;
-	
-$arr=explode(".",$str);	// since we later explode using comma as delimiter I need to convert str to an array, that's all
+	//print_r ($str);
+$arr=explode(".",$str);
 //print_r ($arr);
 
 
@@ -46,7 +45,7 @@ $file = fopen("timing.csv","a");
 
 foreach ($arr as $line)
   {
-  fputcsv($file,explode(',',$line));  // each array becomes a row in excel
+  fputcsv($file,explode(',',$line));
   }
 
 fclose($file); 
