@@ -3,6 +3,10 @@
 <html>
 <head>
   <title>Web Authentication via Keystroke Dynamics</title>
+  <?php
+$myfile = fopen("data.txt","w");
+          fclose($myfile);
+          ?>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
@@ -170,7 +174,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   }
   if($bool) // checks if bool is true
   {
-    mysql_query("INSERT INTO users (username, password) VALUES ('$username','$password')"); //Inserts the value to table users
+    mysql_query("INSERT INTO users (username, password,done) VALUES ('$username','$password',0)"); //Inserts the value to table users
     Print '<script>alert("Successfully Registered! Please Login with your credentials");</script>'; // Prompts the user
     Print '<script>window.location.assign("register.php");</script>'; // redirects to register.php
   }

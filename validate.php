@@ -1,6 +1,6 @@
 <?php 
 
-
+ 	
     session_start(); //starts the session
     if($_SESSION['user']){ //checks if user is logged in
     }
@@ -17,6 +17,7 @@
 		{
 			
 			$table_password = $row['password']; // the first password row is passed on to $table_users, and so on until the query is finished
+			$done=$row['done'];
 		}
 
 
@@ -35,7 +36,7 @@ if($id1==$id2&&$id3==$id4&&$id5==$id6&&$id1==$id3&&$id1==$id5&&$id1!=""&&$table_
 
 $myfile = fopen("data.txt","r");
 $str=fread($myfile,filesize("data.txt"));
-$str=$user.",".$str;
+$str=$user.",".strlen($table_password).",".$str;
 	
 $arr=explode(".",$str);	// since we later explode using comma as delimiter I need to convert str to an array, that's all
 //print_r ($arr);
@@ -61,6 +62,7 @@ fclose($file);
 	Print '<script>
 	alert("you are successfully entered the logistics");
 	window.location.assign("profile.php");</script>'; // redirects to register.php
+	$done_update = mysql_query("update users set done=1 WHERE username='$user'"); //Query the users table if there are matching rows equal to $username
 
 
 

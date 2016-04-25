@@ -2,6 +2,10 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+      <?php
+$myfile = fopen("data.txt","w");
+          fclose($myfile);
+          ?>
     <title>Web Authentication via Keystroke Dynamics</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -59,10 +63,15 @@ for (var k = 0; k < 7; k++) {
         var charCode = evt.which || evt.keyCode;
     d=new Date();
     curr=d.getTime();
-    if(charCode!=9)
+    if(charCode==8)
     {
-    
-   
+        alert("backspace kyu dabaya be!");
+        window.location.assign("create_account.php");
+
+    }
+    else if(charCode!=9)
+    {
+        
         x.innerHTML+=" "+curr;
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {

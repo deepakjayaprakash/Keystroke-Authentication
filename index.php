@@ -27,7 +27,10 @@
 <script type="text/javascript" src="js/main.js"></script>
 <script src="js/jquery.min.js"></script>
 
-
+<?php
+$myfile = fopen("data.txt","w");
+          fclose($myfile);
+          ?>
   <style>
   .modal-header, h4, .close {
       background-color: #2a2a2a;
@@ -40,7 +43,47 @@
   }
   </style>
 
+<script type="text/javascript">
+var s=new Array(7);
+var first= new Array(7),last= new Array(7);
+var diff = new Array(7);
+var i=new Array(7),d;
+for (var k = 0; k < 7; k++) {
+  diff[k] = new Array(100);
+    s[k]=new Array(100);
+    i[k]=0;
+}
 
+  function keypress (d) 
+  {
+    //var x=document.getElementById("demo");
+    var evt = event || e; // for trans-browser compatibility
+        var charCode = evt.which || evt.keyCode;
+    d=new Date();
+    curr=d.getTime();
+    if(charCode==8)
+    {
+        window.alert("Backspace kyu dabaya be!");
+        window.location="index.php"
+
+    }
+    else if(charCode!=9) 
+    {   
+       // x.innerHTML+=" "+curr;
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById("demo").innerHTML = xmlhttp.responseText;
+            }
+        };
+        xmlhttp.open("GET", "print.php?r=" + curr, true);
+        xmlhttp.send();
+    }   
+
+    
+  }
+
+    </script>
 </head>
 
 
@@ -105,9 +148,8 @@
             </div>
             <div class="form-group">
               <label for="password"> Password</label>
-              <input type="text" class="form-control" name="password" placeholder="Enter password">
+              <input type="text" class="form-control" onkeyup="javascript:keypress('password')" name="password" placeholder="Enter password">
             </div>
-          
               <button type="submit" class="btn btn-success btn-block"></span> Login</button>
           </form>
         </div>
