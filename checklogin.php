@@ -36,17 +36,20 @@
 					
 					if($done==1)
 					{
-						$res= shell_exec("\"C:/Program Files/R/R-3.2.0/bin/i386/Rscript.exe\" C:/xampp/htdocs/keystroke/rscripts/user_identification_euclidean.R $username $str") ;
-						$res3= shell_exec("\"C:/Program Files/R/R-3.2.0/bin/i386/Rscript.exe\" C:/xampp/htdocs/keystroke/rscripts/user_identification.R $username $str") ;
-						//  $res3= shell_exec("\"C:/Program Files/R/R-3.2.0/bin/i386/Rscript.exe\" C:/xampp/htdocs/keystroke/rscripts/user_identification.R $username $str") ;
-						echo $res;
+						$res= shell_exec("\"C:/Program Files/R/R-3.2.0/bin/i386/Rscript.exe\" C:/xampp/htdocs/keystroke/rscripts/user_identification_euclidean.R $username $str 2>&1") ;
+						$res3= shell_exec("\"C:/Program Files/R/R-3.2.0/bin/i386/Rscript.exe\" C:/xampp/htdocs/keystroke/rscripts/user_identification.R $username $str 2>&1") ;
+						$res4= shell_exec("\"C:/Program Files/R/R-3.2.0/bin/i386/Rscript.exe\" C:/xampp/htdocs/keystroke/rscripts/user_identification_median.R $username $str 2>&1") ;
+						echo $res."<br>".$res3."<br>".$res4;
+						//echo $res;
 						$res2=$res;
 						$res=substr($res,5,3);
-						print $res;
+						//print $res;
 						
 							$_SESSION['user'] = $username; //set the username in a session. This serves as a global variable
 							$_SESSION['str'] = $res2;
 							$_SESSION['strn'] = $res3;
+
+							$_SESSION['strm'] = $res4;							
 							Print '<script>
 							window.location.assign("profile.php");</script>'; 
 

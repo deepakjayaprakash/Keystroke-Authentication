@@ -44,6 +44,7 @@
 	$user = $_SESSION['user']; //assigns user value
 	$res=$_SESSION['str'];
 	$resn=$_SESSION['strn'];
+	$resm=$_SESSION['strm'];
 	?>
 
 <body>
@@ -104,28 +105,29 @@
     <li><a data-toggle="pill" href="#keys">Enter keystroke</a></li>
     <li><a data-toggle="pill" href="#man">Manhattan</a></li>
     <li><a data-toggle="pill" href="#euc">Eucledian </a></li>
-    <li><a data-toggle="pill" href="#menu3">Menu 3</a></li>
+    <li><a data-toggle="pill" href="#med">manhattan Median </a></li>
   </ul>
   </div>
 
   <div class="col-sm-10">
   <div class="tab-content">
-    <div id="euc" class="tab-pane fade in active">
-      <h3>Statistics</h3>
-      <p><?php Print "$res"; ?>
-      </p>
-    </div>
+    
     <div id="keys" class="tab-pane fade">
       <h3>Enter Keystroke</h3>
       <p><a href="create_account.php">Go to create logistics page</a></p>
+    </div>
+    <div id="euc" class="tab-pane fade in active">
+      <h3>Euclidian</h3>
+      <p><?php Print "$res"; ?>
+      </p>
     </div>
     <div id="man" class="tab-pane fade">
       <h3>Manhattan model</h3>
       <p> <?php Print "$resn" ?></p>
     </div>
-    <div id="menu3" class="tab-pane fade">
-      <h3>Menu 3</h3>
-      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+    <div id="med" class="tab-pane fade">
+      <h3>Manhattan model using median </h3>
+      <p><?php Print "$resm" ?></p>
     </div>
   </div>
   </div>

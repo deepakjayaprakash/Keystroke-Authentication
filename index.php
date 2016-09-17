@@ -117,7 +117,7 @@ for (var k = 0; k < 7; k++) {
 					<a href="index.php" style=" font-size:15pt;color: #e8e51c;">About
 					</a></li>
 					<li class="animated wow fadeInRight" data-wow-delay=".3s">
-					<a href="index.php" style=" font-size:15pt;color: #e8e51c;">Github
+					<a href="http://github.com/deepakjayaprakash/Keystroke-Authentication" style=" font-size:15pt;color: #e8e51c;">Github
 					</a></li>
 					<li class="animated wow fadeInRight" data-wow-delay=".4s">
 					<a href="register.php" style=" font-size:15pt;color: #e8e51c;">Register
