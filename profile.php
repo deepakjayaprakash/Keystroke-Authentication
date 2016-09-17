@@ -42,9 +42,11 @@
 		header("location:index.php"); // redirects if user is not logged in
 	}
 	$user = $_SESSION['user']; //assigns user value
+	if(isset($_SESSION['str'])&& isset($_SESSION['strn'])&& isset($_SESSION['strm'])){
 	$res=$_SESSION['str'];
 	$resn=$_SESSION['strn'];
 	$resm=$_SESSION['strm'];
+	}
 	?>
 
 <body>
