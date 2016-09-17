@@ -42,6 +42,8 @@
 		header("location:index.php"); // redirects if user is not logged in
 	}
 	$user = $_SESSION['user']; //assigns user value
+	$res=$_SESSION['str'];
+	$resn=$_SESSION['strn'];
 	?>
 
 <body>
@@ -98,26 +100,28 @@
  
 
   <ul class="nav nav-pills nav-stacked">
-    <li class="active"><a data-toggle="pill" href="#home">Statistics</a></li>
-    <li><a data-toggle="pill" href="#menu1">Enter keystroke</a></li>
-    <li><a data-toggle="pill" href="#menu2">Menu 2</a></li>
+    <li class="active">
+    <li><a data-toggle="pill" href="#keys">Enter keystroke</a></li>
+    <li><a data-toggle="pill" href="#man">Manhattan</a></li>
+    <li><a data-toggle="pill" href="#euc">Eucledian </a></li>
     <li><a data-toggle="pill" href="#menu3">Menu 3</a></li>
   </ul>
   </div>
 
   <div class="col-sm-10">
   <div class="tab-content">
-    <div id="home" class="tab-pane fade in active">
-      <h3>HOME</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <div id="euc" class="tab-pane fade in active">
+      <h3>Statistics</h3>
+      <p><?php Print "$res"; ?>
+      </p>
     </div>
-    <div id="menu1" class="tab-pane fade">
+    <div id="keys" class="tab-pane fade">
       <h3>Enter Keystroke</h3>
       <p><a href="create_account.php">Go to create logistics page</a></p>
     </div>
-    <div id="menu2" class="tab-pane fade">
-      <h3>Menu 2</h3>
-      <p></p>
+    <div id="man" class="tab-pane fade">
+      <h3>Manhattan model</h3>
+      <p> <?php Print "$resn" ?></p>
     </div>
     <div id="menu3" class="tab-pane fade">
       <h3>Menu 3</h3>

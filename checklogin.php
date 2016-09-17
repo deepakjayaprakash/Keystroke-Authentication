@@ -36,28 +36,22 @@
 					
 					if($done==1)
 					{
-						$res= shell_exec("\"C:/Program Files/R/R-3.2.0/bin/i386/Rscript.exe\" C:/xampp/htdocs/keystroke/rscripts/user_identification.R $username $str") ;
+						$res= shell_exec("\"C:/Program Files/R/R-3.2.0/bin/i386/Rscript.exe\" C:/xampp/htdocs/keystroke/rscripts/user_identification_euclidean.R $username $str") ;
+						$res3= shell_exec("\"C:/Program Files/R/R-3.2.0/bin/i386/Rscript.exe\" C:/xampp/htdocs/keystroke/rscripts/user_identification.R $username $str") ;
+						//  $res3= shell_exec("\"C:/Program Files/R/R-3.2.0/bin/i386/Rscript.exe\" C:/xampp/htdocs/keystroke/rscripts/user_identification.R $username $str") ;
+						echo $res;
+						$res2=$res;
 						$res=substr($res,5,3);
 						print $res;
-						if($res=="yes")
-						{
+						
 							$_SESSION['user'] = $username; //set the username in a session. This serves as a global variable
+							$_SESSION['str'] = $res2;
+							$_SESSION['strn'] = $res3;
 							Print '<script>
-							alert("User Identification successful!");
 							window.location.assign("profile.php");</script>'; 
 
 							
-						}
-						else
-						{
-							//$_SESSION['user'] = $username; //set the username in a session. This serves as a global variable
-
-							Print '<script>
-							alert("User Identification not  successful!");
-							window.location.assign("index.php");</script>'; 
-
-						
-						}		
+								
 								
 					}
 					else

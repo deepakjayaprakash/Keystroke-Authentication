@@ -1,6 +1,6 @@
 
 args <- commandArgs(TRUE)
-
+#print("lolwa")
 username<-args[1]
 arr<-as.numeric(unlist(strsplit(args[2], split=",")))
 all_users<-read.csv("timing.csv",header=FALSE)
@@ -16,6 +16,7 @@ user_timing_details=array(0,ncol(user_details)-4+1)
 for(i in 1:length(user_timing_details))
   user_timing_details[i]=as.numeric(user_details[i+3])
 total_timing=array(0,pwd_len)
+
 while(1)
 {
   if((num_pwd_stored*pwd_len+1)>length(user_timing_details))
@@ -45,6 +46,8 @@ for(i in 1:length(arr))
 {
   diff_arr[i]=avg_pwd_timing[i]-arr[i]
 }
+max=diff_arr[1]
+#print(max)
 for(i in 1:length(diff_arr))
 {
   #print(diff_arr[i])
@@ -52,20 +55,26 @@ for(i in 1:length(diff_arr))
   {
     if(diff_arr[i]<150)
     {
+	if(max<diff_arr[i])
+		max=diff_arr[i]
       flag=1
     }
     else
     {
       flag=0
+	 max=diff_arr[i]
       break
     }
   }
   else
   {
     flag=0
+	max=diff_arr[i]
     break
   }
 }
+#print("xoxo")
+cat("Threshold : 150   Man dist :  ",max)
 
 #print(flag)
 if(flag==0)
